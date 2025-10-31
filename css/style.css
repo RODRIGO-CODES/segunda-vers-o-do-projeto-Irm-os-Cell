@@ -1,0 +1,173 @@
+/* ==========================
+   SISTEMA DE DESIGN
+========================== */
+:root {
+  --cor-primaria: #007bff;
+  --cor-secundaria: #ffc107;
+  --cor-neutra-clara: #f8f9fa;
+  --cor-neutra-media: #6c757d;
+  --cor-neutra-escura: #212529;
+  --cor-sucesso: #28a745;
+  --cor-erro: #dc3545;
+  --cor-alerta: #fd7e14;
+  --cor-info: #17a2b8;
+
+  --fonte-base: "Arial", sans-serif;
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+}
+
+/* ==========================
+   ESTILOS GERAIS
+========================== */
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-neutra-escura);
+  background-color: var(--cor-neutra-clara);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--esp-3);
+}
+
+/* ==========================
+   CABEÇALHO E MENU
+========================== */
+.cabecalho {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: var(--esp-2) 0;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  text-align: center;
+  margin: 0;
+}
+
+.menu-principal ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: var(--esp-3);
+  padding: 0;
+}
+
+.menu-principal a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-principal a:hover,
+.menu-principal .ativo {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+/* ==========================
+   SEÇÕES
+========================== */
+section {
+  margin-bottom: var(--esp-5);
+}
+
+h2 {
+  text-align: center;
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-3);
+}
+
+/* ==========================
+   CARDS DE SERVIÇOS
+========================== */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--esp-3);
+}
+
+.card {
+  background-color: white;
+  padding: var(--esp-3);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* ==========================
+   FORMULÁRIO
+========================== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input, select, textarea {
+  padding: var(--esp-2);
+  border: 1px solid var(--cor-neutra-media);
+  border-radius: 6px;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: var(--esp-2);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-neutra-escura);
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+.rodape {
+  background-color: var(--cor-neutra-escura);
+  color: white;
+  text-align: center;
+  padding: var(--esp-3);
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 768px) {
+  .menu-principal {
+    display: none;
+  }
+  .menu-principal.aberto {
+    display: block;
+    text-align: center;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
